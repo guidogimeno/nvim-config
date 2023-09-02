@@ -160,6 +160,11 @@ _G.packer_plugins = {
     path = "/home/ggimeno/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/ggimeno/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-go"] = {
     loaded = true,
     path = "/home/ggimeno/.local/share/nvim/site/pack/packer/start/vim-go",
