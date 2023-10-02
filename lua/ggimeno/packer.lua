@@ -11,13 +11,21 @@ return require('packer').startup(function(use)
   		'nvim-telescope/telescope.nvim', tag = '0.1.2',
   		requires = { {'nvim-lua/plenary.nvim'} }
   	}
- 
+
 	use { "ellisonleao/gruvbox.nvim" }
-	
+
+  	use({ 'rose-pine/neovim', as = 'rose-pine' })
+
 	use('theprimeagen/harpoon')
-	
-	use('nvim-treesitter/nvim-treesitter', {run = 'TSUpdate'})
-	
+
+	use({
+	'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end
+	})
+
 	use{'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
 		requires = {
@@ -35,7 +43,7 @@ return require('packer').startup(function(use)
 	}
 
 	use {'fatih/vim-go'}
-	
+
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true }
