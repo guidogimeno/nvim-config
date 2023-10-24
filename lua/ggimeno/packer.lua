@@ -54,4 +54,18 @@ return require('packer').startup(function(use)
 	use "terrortylor/nvim-comment"
 
 	use('tpope/vim-fugitive')
+
+	use {"mfussenegger/nvim-dap"}
+
+	use {"leoluz/nvim-dap-go",
+		ft = "go",
+		dependencies = "msfussenegger/nvim-dap",
+		config = function(_, opts)
+			require("dap-go").setup(opts)
+		end
+	}
+
+	use {"rcarriga/nvim-dap-ui"}
+
+	use {"theHamsta/nvim-dap-virtual-text"}
 end)
