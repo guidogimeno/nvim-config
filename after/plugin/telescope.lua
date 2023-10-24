@@ -5,3 +5,11 @@ vim.keymap.set('n', '<leader>pw', builtin.grep_string, { desc = '[S]earch curren
 vim.keymap.set('n', '<leader>pg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>pr', builtin.oldfiles, { desc = '[?] Find recently opened files' })
 
+
+local telescope = require('telescope')
+
+telescope.setup({
+	defaults = {
+		path_display = { "truncate" }
+	}
+})
