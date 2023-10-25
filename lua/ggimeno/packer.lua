@@ -57,13 +57,7 @@ return require('packer').startup(function(use)
 
 	use {"mfussenegger/nvim-dap"}
 
-	use {"leoluz/nvim-dap-go",
-		ft = "go",
-		dependencies = "msfussenegger/nvim-dap",
-		config = function(_, opts)
-			require("dap-go").setup(opts)
-		end
-	}
+	use {"leoluz/nvim-dap-go"}
 
 	use {"rcarriga/nvim-dap-ui"}
 
