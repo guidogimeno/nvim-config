@@ -41,3 +41,7 @@ vim.keymap.set("n", "<leader>b", ":lua require('dap').toggle_breakpoint()<CR>")
 vim.keymap.set("n", "<leader>B", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 vim.keymap.set("n", "<leader>dt", ":lua require('dap-go').debug_test()<CR>")
 vim.keymap.set("n", "<leader>ds", ":lua require('dap').terminate()<CR>")
+
+-- golang shortcuts
+vim.keymap.set("n", "<leader>ie", "i    if err != nil {<CR>return err<CR>}<CR><Esc>")
+
