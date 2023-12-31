@@ -41,3 +41,5 @@ vim.keymap.set("n", "<leader>b", ":lua require('dap').toggle_breakpoint()<CR>")
 vim.keymap.set("n", "<leader>B", ":lua require('dap').debug_test()<CR>")
 vim.keymap.set("n", "<leader>td", ":lua require('dap-go').debug_test()<CR>")
 vim.keymap.set("n", "<leader>dr", ":lua require('dap').repl.open()<CR>")
+
+vim.keymap.set("n", "<leader>ie", "i    if err != nil {<CR>return err<CR>}<CR><Esc>")
