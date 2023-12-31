@@ -33,13 +33,15 @@ vim.keymap.set("x", "p", "\"_dP")
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- dap
-vim.keymap.set("n", "<F5>", ":lua require('dap').continue()<CR>")
-vim.keymap.set("n", "<F10>", ":lua require('dap').step_over()<CR>")
-vim.keymap.set("n", "<F11>", ":lua require('dap').step_into()<CR>")
-vim.keymap.set("n", "<F12>", ":lua require('dap').step_out()<CR>")
+vim.keymap.set("n", "<F5>", ":lua require('dap').step_into()<CR>")
+vim.keymap.set("n", "<F6>", ":lua require('dap').step_over()<CR>")
+vim.keymap.set("n", "<F7>", ":lua require('dap').step_out()<CR>")
+vim.keymap.set("n", "<F8>", ":lua require('dap').continue()<CR>")
 vim.keymap.set("n", "<leader>b", ":lua require('dap').toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<leader>B", ":lua require('dap').debug_test()<CR>")
-vim.keymap.set("n", "<leader>td", ":lua require('dap-go').debug_test()<CR>")
-vim.keymap.set("n", "<leader>dr", ":lua require('dap').repl.open()<CR>")
+vim.keymap.set("n", "<leader>B", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+vim.keymap.set("n", "<leader>dt", ":lua require('dap-go').debug_test()<CR>")
+vim.keymap.set("n", "<leader>ds", ":lua require('dap').terminate()<CR>")
 
+-- golang shortcuts
 vim.keymap.set("n", "<leader>ie", "i    if err != nil {<CR>return err<CR>}<CR><Esc>")
+
