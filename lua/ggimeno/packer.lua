@@ -60,4 +60,11 @@ return require('packer').startup(function(use)
 	use {"rcarriga/nvim-dap-ui"}
 
 	use {"theHamsta/nvim-dap-virtual-text"}
+
+	use {
+		"Exafunction/codeium.vim",
+		-- config = function ()
+		-- 	vim.keymap.set("i", "<C->", function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+		-- end
+	}
 end)
