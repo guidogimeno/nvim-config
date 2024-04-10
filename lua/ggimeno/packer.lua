@@ -61,10 +61,5 @@ return require('packer').startup(function(use)
 
 	use {"theHamsta/nvim-dap-virtual-text"}
 
-	use {
-		"Exafunction/codeium.vim",
-		-- config = function ()
-		-- 	vim.keymap.set("i", "<C->", function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-		-- end
-	}
+	use {"Exafunction/codeium.vim"}
 end)
