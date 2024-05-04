@@ -62,4 +62,6 @@ return require('packer').startup(function(use)
 	use {"theHamsta/nvim-dap-virtual-text"}
 
 	use {"Exafunction/codeium.vim"}
+
+	use { "nvim-neotest/nvim-nio" }
 end)
