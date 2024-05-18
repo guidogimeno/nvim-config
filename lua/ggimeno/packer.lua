@@ -1,10 +1,6 @@
--- This file can be loaded by calling 'lua require('plugins')' from your init.vim
-
--- Only required if you have packer configured as 'opt'
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
     use {
@@ -13,8 +9,6 @@ return require('packer').startup(function(use)
     }
 
     use({ "rose-pine/neovim", as = "rose-pine" })
-
-    use "theprimeagen/harpoon"
 
     use({
         "nvim-treesitter/nvim-treesitter",
@@ -37,8 +31,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    use "fatih/vim-go"
-
     use {
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
@@ -46,11 +38,15 @@ return require('packer').startup(function(use)
 
     use { "akinsho/toggleterm.nvim", tag = '*' }
 
+    use "theprimeagen/harpoon"
+
     use "terrortylor/nvim-comment"
 
     use "tpope/vim-fugitive"
 
     use "mfussenegger/nvim-dap"
+
+    use "fatih/vim-go"
 
     use "leoluz/nvim-dap-go"
 

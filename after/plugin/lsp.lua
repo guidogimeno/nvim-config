@@ -1,46 +1,47 @@
 local lsp = require("lsp-zero")
+local cmp = require("cmp")
 
-lsp.preset("recommended")
+lsp.on_attach(function(_, bufnr)
+    lsp.default_keymaps({ buffer = bufnr })
+	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
+	vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end)
+	vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end)
+	vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end)
+end)
 
-lsp.ensure_installed({
+local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require("mason").setup({})
+require("mason-lspconfig").setup({
+  ensure_installed = {
 	"gopls",
 	"eslint",
 	"tsserver",
 	"html",
 	"jsonls",
+  },
+  handlers = {
+    function(server_name)
+      require("lspconfig")[server_name].setup({
+          capabilities = lsp_capabilities
+      })
+    end,
+  }
 })
-
-lsp.nvim_workspace()
-local cmp = require("cmp")
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true }),
-	['<C-Space>'] = cmp.mapping.complete(),
-})
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.set_preferences({
-	sign_icons = {}
-})
-
-lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
-})
-
-lsp.on_attach(function(_, bufnr)
-	local opts = {buffer = bufnr, remap = false}
-	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-	vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
-	vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
-	vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
-end)
-
-lsp.setup()
 
 vim.diagnostic.config({
-	virtual_text = true
+  signs = false,
+  virtual_text = true,
 })
+
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        ["<C-p>"] = cmp.mapping.select_prev_item({behavior = "select"}),
+        ["<C-n>"] = cmp.mapping.select_next_item({behavior = "select"}),
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<Tab>"] = nil,
+        ["<S-Tab>"] = nil
+    })
+})
+
