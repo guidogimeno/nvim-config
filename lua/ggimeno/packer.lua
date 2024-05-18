@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
     use "wbthomason/packer.nvim"
 
     use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.2",
+        "nvim-telescope/telescope.nvim", tag = "0.1.6",
         requires = { { "nvim-lua/plenary.nvim" } }
     }
 
@@ -63,4 +63,6 @@ return require('packer').startup(function(use)
     use "nvim-neotest/nvim-nio"
 
     use "mfussenegger/nvim-jdtls"
+
+    use "nvim-lua/plenary.nvim"
 end)
