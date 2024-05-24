@@ -61,4 +61,6 @@ return require('packer').startup(function(use)
     use "mfussenegger/nvim-jdtls"
 
     use "nvim-lua/plenary.nvim"
+
+    use "mbbill/undotree"
 end)
