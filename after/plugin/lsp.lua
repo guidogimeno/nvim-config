@@ -7,6 +7,7 @@ lsp.on_attach(function(_, bufnr)
 	vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end)
 	vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end)
 	vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end)
+    vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
 end)
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
