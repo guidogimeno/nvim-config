@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>k", ":wincmd k<CR>", { noremap = true })
 -- copy and paste from clipboard
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set("n", "<leader>p", "\"+p")
 
 -- move code
@@ -44,4 +45,3 @@ vim.keymap.set("n", "<leader>ds", ":lua require('dap').terminate()<CR>")
 
 -- golang shortcuts
 vim.keymap.set("n", "<leader>ie", "i    if err != nil {<CR>return err<CR>}<CR><Esc>")
-
