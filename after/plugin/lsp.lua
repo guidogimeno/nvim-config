@@ -7,6 +7,8 @@ lsp.on_attach(function(_, bufnr)
 	vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end)
 	vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end)
 	vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end)
+	vim.keymap.set("n", "vca", function() vim.lsp.buf.code_action() end)
+	vim.keymap.set("n", "vrn", function() vim.lsp.buf.rename() end)
     vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
 end)
 
