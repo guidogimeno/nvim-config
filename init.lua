@@ -188,7 +188,7 @@ require('lazy').setup({
                     map('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
                     map('gh', vim.lsp.buf.hover, '[G]oto [H]over')
                     map('<leader>vca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
-                    map('<leader>vrn', vim.lsp.buf.rename, '[R]e[n]ame')
+                    map('vrn', vim.lsp.buf.rename, '[R]e[n]ame')
                     map('<leader>f', vim.lsp.buf.format, '[F]ormat')
                 end,
             })
