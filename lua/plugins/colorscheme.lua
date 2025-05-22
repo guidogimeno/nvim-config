@@ -1,16 +1,14 @@
 return {
-  {
-    "mcchrish/zenbones.nvim",
-    dependencies = { "rktjmp/lush.nvim" }, -- Required for zenbones
-    priority = 1000, -- Load early to avoid flashes
-    config = function()
-      vim.cmd.colorscheme("zenbones") -- Use "zenbones-dark" for dark variant
-    end,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "zenbones",
-    },
-  },
+	"rose-pine/neovim",
+	priority = 1000,
+	name = "rose-pine",
+	config = function()
+		require("rose-pine").setup({
+			variant = "moon",
+			dark_variant = "moon",
+			disable_background = true,
+			disable_italic = true,
+		})
+		vim.cmd("colorscheme rose-pine")
+	end,
 }
