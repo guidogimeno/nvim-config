@@ -16,9 +16,9 @@ vim.keymap.set('n', '<leader>k', ':wincmd k<CR>', { noremap = true })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
--- quickfix list TODO: buscar otro keymap
--- vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>')
--- vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>')
+-- quickfix list
+vim.keymap.set('n', '[q', '<cmd>cnext<CR>')
+vim.keymap.set('n', ']q', '<cmd>cprev<CR>')
 
 -- scroll
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
