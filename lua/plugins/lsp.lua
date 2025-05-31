@@ -84,7 +84,6 @@ return {
 		})
 
 		vim.diagnostic.config({
-			-- update_in_insert = true,
 			float = {
 				focusable = false,
 				style = "minimal",
@@ -93,6 +92,8 @@ return {
 				header = "",
 				prefix = "",
 			},
+            signs = false,
+            virtual_text = true
 		})
 	end,
 }
