@@ -3,19 +3,6 @@ vim.cmd [[highlight clear]]
 vim.cmd [[syntax reset]]
 vim.g.colors_name = 'minimal'
 
--- local colors = {
---     bg = '#1D2021',
---     fg = '#D5C4A1',
---     red = '#C7534E',
---     blue = '#458588',
---     green_light = '#98971A',
---     purple = '#B16286',
---     yellow = '#D79921',
---     orange = '#D65D0E',
---     green = '#44B340',
---     grey = '#928374',
--- }
-
 local colors = {
     bg = '#1D2021',
     fg = '#EBDBB2',
@@ -36,8 +23,6 @@ end
 set_hl('CursorLine', { bg = colors.bg })
 set_hl('LineNr', { fg = colors.grey })
 set_hl('Normal', { fg = colors.fg, bg = colors.bg })
-set_hl('Pmenu', { fg = colors.fg, bg = colors.bg })
-set_hl('PmenuSel', { fg = colors.fg, bg = colors.bg })
 set_hl('Search', { fg = colors.fg, bg = colors.bg })
 set_hl('StatusLine', { fg = colors.fg, bg = colors.bg })
 set_hl('StatusLineNC', { fg = colors.fg, bg = colors.bg })
